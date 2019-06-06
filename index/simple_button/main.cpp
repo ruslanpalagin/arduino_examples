@@ -3,7 +3,7 @@
 #define MY_D1 5
 #define MY_LED 2
 
-void main2(void) {
+void setup2(void) {
   Serial.begin(115200);
 
       delay(300);
