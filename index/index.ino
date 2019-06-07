@@ -1,4 +1,4 @@
-#include "src/simple_inversed_button/main.h"
+#include "src/current/main.h"
 
 void setup() {
   setup2();
