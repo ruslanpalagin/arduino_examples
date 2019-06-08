@@ -5,8 +5,8 @@
 #define DIGITAL_INPUT 5
 #define LED_NONE 0
 #define LED_GREEN 4
-#define LED_YELLOW 12
-#define LED_RED 14
+#define LED_YELLOW 14
+#define LED_RED 12
 
 Button button;
 int currentLed;
