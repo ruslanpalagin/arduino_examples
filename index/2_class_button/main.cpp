@@ -5,6 +5,7 @@
 #define MY_D1 5
 #define MY_LED 2
 
+bool isLedOn;
 Button button;
 
 void setup2(void) {
@@ -16,10 +17,15 @@ void setup2(void) {
     // put your setup code here, to run once:
     pinMode(MY_D1, INPUT);
     pinMode(MY_LED, OUTPUT);
+
+    isLedOn = false;
+    button.onTap([](void) -> void { isLedOn = !isLedOn; });
+    button.onDown([](void) -> void { return; });
+    button.onUp([](void) -> void { return; });
 }
 
 void loop2() {
-    bool isIdle = digitalRead(MY_D1);
-    button.loop(!isIdle);
-//    digitalWrite(MY_LED, is_led_on ? LOW : HIGH);
+    bool isPressed = !digitalRead(MY_D1);
+    button.loop(isPressed);
+    digitalWrite(MY_LED, isLedOn ? LOW : HIGH);
 }

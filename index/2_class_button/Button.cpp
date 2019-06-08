@@ -1,5 +1,4 @@
 #include "Button.h"
-#include "Arduino.h"
 
 Button::Button()
 {
@@ -15,8 +14,26 @@ void Button::loop(bool isPressed)
     }
     loopsCount++;
     if (loopsCount >= loopsBeforeTrigger) {
-        Serial.println("Pushed!...\n");
+        if (isPressed) {
+            onTapHandler();
+        }
+
         lastStatus = isPressed;
         loopsCount = 0;
     }
+};
+
+void Button::onTap(std::function<void(void)> onTapHandler_)
+{
+    onTapHandler = onTapHandler_;
+};
+
+void Button::onDown(std::function<void(void)> onDownHandler_)
+{
+    onDownHandler = onDownHandler_;
+};
+
+void Button::onUp(std::function<void(void)> onUpHandler_)
+{
+    onUpHandler = onUpHandler_;
 };
