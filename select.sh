@@ -1,0 +1,1 @@
+rm index/src/current -f && ln -s  ../../$1 index/src/current

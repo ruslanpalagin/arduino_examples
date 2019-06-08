@@ -2,8 +2,7 @@
 sudo /home/dev/ProgramFiles/arduino-1.8.9-linux64/arduino-1.8.9/arduino
 
 # Select project
-rm index/src/current -f && ln -s  ../4_pins_test index/src/current
-
+./select.sh 4_semaphore
 
 # References
 
